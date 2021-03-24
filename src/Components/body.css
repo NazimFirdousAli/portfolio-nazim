@@ -1,0 +1,13 @@
+@media screen and (max-width: 320px) {
+    .avatar_contact {
+        margin-top: 50px;
+    }
+  }
+.avatar_contact div{
+    padding-left: 20px;
+    margin-top: 3%;
+    display : inline-block;
+    position: relative;
+}
+
+
