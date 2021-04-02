@@ -143,7 +143,8 @@ function Body() {
                                 <div className="avatar_contact">
                                     <div className="facebook" >
                                         <a href="https://www.facebook.com" target="_blank">
-                                            <FaFacebook color='#3b5998' /*onClick={()=> window.location.href='https://www.instagram.com/'}*/ size="30px" />
+                                        {/* onClick={()=> window.location.href='https://www.instagram.com/' */}
+                                            <FaFacebook color='#3b5998'  size="30px" />
                                         </a>
                                     </div>
                                     <div className="insta">

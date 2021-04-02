@@ -1,6 +1,7 @@
 @media screen and (max-width: 320px) {
     .avatar_contact {
         margin-top: 50px;
+opacity: 1;
     }
   }
 .avatar_contact div{
@@ -9,5 +10,8 @@
     display : inline-block;
     position: relative;
 }
+/* .facebook:hover >  {
+    display: none;
+} */
 
 

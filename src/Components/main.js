@@ -3,7 +3,8 @@ import Body from './body.js'
 import About from './about.js'
 import MySkills from './mySkills.js'
 import MyProjects from './myProjects.js'
-import image1 from '../Images/2.jpg'
+import Education from './education.js'
+
 import './main.css'
 
 // import PersistentDrawerRight from './PersistentDrawerRight'
@@ -11,10 +12,12 @@ import './main.css'
 function Main() {
     return (
         <div class="main">
+            {/* <PersistentDrawerRight/> */}
             <Body/>
             <About/>
             <MySkills/>
-            <MyProjects/>
+            <Education/>
+            {/* <MyProjects/> */}
             
         </div>
     )
