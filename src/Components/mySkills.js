@@ -19,13 +19,21 @@ const useStyles = makeStyles((theme) => ({
         backgroundSize: '100%',
         backgroundRepeat: 'no-repeat', 
         backgroundAttachment: 'fixed',
+        [theme.breakpoints.down('xs')]: {
+            backgroundSize:'250%',
+            // paddingTop:'200px'
+        },
 
     },
     heading1:{
-        paddingTop:'8%',
+        paddingTop:'5%',
         textAlign:'center',
         fontFamily:'Montserrat, sans-serif',
-        fontSize:'40px'
+        fontSize:'40px',
+        [theme.breakpoints.down('sm')]: {
+            fontSize:'30px'
+        },
+
     }
 })
 )

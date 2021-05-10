@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import schoolImage from '../Images/1.png'
 import collegeImage from '../Images/2.png'
@@ -6,6 +6,9 @@ import universityImage from '../Images/3.png'
 import verticleRoad from '../Images/4.png'
 import horizontalRoad from '../Images/road-hori.png'
 import StudentGif from '../Images/StudentGif.gif'
+
+import useWebAnimations from "@wellyshen/use-web-animations";
+
 
 
 
@@ -17,17 +20,14 @@ const useStyles = makeStyles((theme) => ({
 
     },
     school: {
-        display: 'block',
-        marginLeft: 'auto',
-        marginRight: 'auto',
         position: 'relative',
         marginTop: '2%',
         [theme.breakpoints.down('sm')]: {
-            marginBottom: '-10px'
+            // marginBottom: '-10px'
         },
         [theme.breakpoints.down('xs')]: {
-            height: '90%',
-            width: '90%',
+            height: '60px',
+            width: '250px',
             marginBottom: '-1%',
             marginTop: '13%'
         }
@@ -38,50 +38,51 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         marginTop: '-18px',
         position: 'absolute',
+        [theme.breakpoints.down('xs')]: {
+            height: '10px',
+            marginTop: '-1px'
+        }
+
 
     },
     college: {
-        display: 'block',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        [theme.breakpoints.down('md')]: {
-            marginLeft: '-140px',
-        },
+        marginTop: '2%',
+        marginBottom: '-1%',
         [theme.breakpoints.down('sm')]: {
-            marginBottom: '-8px',
-            marginLeft: '-36%'
+            marginLeft: '5%',
+            marginBottom: '-13px',
+            marginTop: '20px'
         },
         [theme.breakpoints.down('xs')]: {
-            marginLeft: '-85%',
-            // height: '200px',
-            width: '550px'
+            height: '70%',
+            width: '70%',
+            marginTop: '13%'
         }
 
     },
     road2: {
-        marginTop: '-17.6%',
         height: '20px',
         width: '100%',
         position: 'absolute',
-        [theme.breakpoints.down('md')]: {
-            marginTop: '-235px'
-
+        [theme.breakpoints.down('sm')]: {
+            marginTop: '0px'
+        },
+        [theme.breakpoints.down('xs')]: {
+            height: '10px',
         }
 
     },
     university: {
-        display: 'block',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        // marginTop: '-14%',
+        marginTop: '3%',
+        marginBottom: '-.5%',
         [theme.breakpoints.down('sm')]: {
-            marginBottom: '-.2%'
+            // marginBottom: '-.2%',
+            marginTop: '30px'
         },
         [theme.breakpoints.down('xs')]: {
-            height: '80%',
-            width: '80%',
-            marginBottom: '-3%',
-            marginTop: '1%'
+            height: '70%',
+            width: '70%',
+            marginBottom: '-1%',
         }
 
     },
@@ -90,33 +91,39 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         position: 'absolute',
         [theme.breakpoints.down('xs')]: {
-            marginTop: '23%'
+            height: '10px'
         },
-        
-
     },
     horiRoad: {
         position: 'absolute',
-        marginLeft: '98%',
+        marginLeft: '98.5%',
+        [theme.breakpoints.down('md')]: {
+            marginLeft: '98%'
+        },
         [theme.breakpoints.down('sm')]: {
             marginLeft: '97.4%'
         },
+        [theme.breakpoints.down('xs')]: {
+            width: '10px',
+            height: '100px',
+            marginLeft: '97%'
+        }
 
     },
     horiRoad1: {
-        marginTop: '-2.5%',
+        marginTop: '1%',
         position: 'absolute',
         [theme.breakpoints.down('sm')]: {
-            marginTop: '-3.5%'
         },
         [theme.breakpoints.down('xs')]: {
-            marginTop: '-9%'
+            width: '10px',
+            height: '100px',
         }
 
     },
     gif: {
         position: 'absolute',
-        marginTop: '-6%',
+        marginTop: '-4%',
         zIndex: '4',
         [theme.breakpoints.down('sm')]: {
             marginTop: '-8%'
@@ -124,7 +131,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('xs')]: {
             width: '32px',
             height: '30px',
-            marginTop: '-11%'
+            // marginTop: '-11%'
         }
     }
 })
@@ -134,53 +141,28 @@ const useStyles = makeStyles((theme) => ({
 function Education() {
     const classes = useStyles();
 
+    const { ref, getAnimation } = useWebAnimations({
+        keyframes: { transform: "translateX(600px)" },
+        timing: { duration: 1000, fill: "forwards" },
+    });
 
+    const speedUp = () => {
+        const animation = getAnimation();
+        animation.updatePlaybackRate(animation.playbackRate * 2);
+        
+    };
 
-    function second(a) {
-        Element.animate([
-            { transform: 'translate(650px,0)' },
+    const jumpToHalf = () => {
+        const animation = getAnimation();
+        animation.currentTime = animation.effect.getTiming().duration / 2;
+    };
 
-
-        ], {
-            duration: a,
-            fill: 'forwards'
-
-        })
-    }
-
-    function third(a) {
-        Element.animate([
-            { transform: 'translate(0px,0px)' },
-            { transform: 'translate(1320px,0px)' },
-            { transform: 'translate(1320px,186px) scaleX(-1)' },
-            { transform: ' translate(650px,186px) scaleX(-1)' },
-        ], {
-            duration: a,
-            fill: 'forwards'
-
-        })
-    }
-
-    function forth(a) {
-        Element.animate([
-            { transform: 'translate(0px,0px)' },
-            { transform: 'translate(1250px,0px)' },
-            { transform: ' translate(1250px,186px)' },
-            { transform: ' translate(0px,186px)' },
-            { transform: 'translate(0px,386px)' },
-            { transform: 'translate(650px,370px)' },
-        ], {
-            duration: a,
-            fill: 'forwards'
-
-        })
-    }
 
     return (
         <div className={classes.root}>
-            <div>
+            <div style={{ textAlign: 'center' }}>
                 <img className={classes.school} id="School" src={schoolImage} alt="" height="120px" width="450px"
-            /*onclick=doSomething()*/ /><br />
+                    onClick={speedUp} /><br />
             </div>
 
             <div class="gif">
@@ -192,17 +174,17 @@ function Education() {
                 <img className={classes.horiRoad} src={verticleRoad} alt="" height="180px" width="20px" />
             </div>
 
-            <div style={{ marginLeft: "3%" }}>
-                <img className={classes.college} id="College" src={collegeImage} height="380px" width="850px" alt=""
-            /*onclick="doSomething1()"*/ />
+            <div style={{ textAlign: 'center' }}>
+                <img className={classes.college} id="College" src={collegeImage} height="150px" width="450px" alt=""
+                    onclick="doSomething1()" />
             </div>
 
             <div>
                 <img className={classes.road2} src={horizontalRoad} alt="" />
+                <img className={classes.horiRoad1} src={verticleRoad} alt="" height="180px" width="20px" />
             </div>
 
-            <div style={{ marginTop: '-190px' }} >
-                <img className={classes.horiRoad1} src={verticleRoad} alt="" height="180px" width="20px" />
+            <div style={{ textAlign: 'center' }} >
 
                 <img className={classes.university} id="University" src={universityImage} height="140px" width="450px" alt=""
             /*onclick="doSomething2()"*/ />

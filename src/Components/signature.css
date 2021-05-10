@@ -1,0 +1,40 @@
+.App {
+    text-align: center;
+  }
+  
+  .signature {
+    animation: welcomeScr .2s ease;
+    animation-fill-mode: forwards;
+    animation-delay: 4.5s;
+  }
+  .signature__container {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(78, 76, 76);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @keyframes welcomeScr {
+    to {
+        visibility: hidden;
+        opacity: 0
+    }
+  }
+  
+  g{
+    stroke-dashoffset:-6000px;
+     stroke-dasharray:6000px;
+    animation: dash 2s linear forwards;
+  }
+  
+  @keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+  }

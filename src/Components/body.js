@@ -10,13 +10,18 @@ import Grid from '@material-ui/core/Grid';
 import Navbar from './navbar.js';
 import image1 from '../Images/1.jpg'
 import DP from '../Images/DP.jpeg'
-import Paper from '@material-ui/core/Paper';
-import Avatar from '@material-ui/core/Avatar';
-import { FaFacebook } from "react-icons/fa";
-import { RiInstagramLine } from "react-icons/ri";
-import { IoLogoWhatsapp } from "react-icons/io";
-import { AiOutlineGithub } from "react-icons/ai";
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+
+// import { FaFacebook } from "react-icons/fa";
+// import { RiInstagramLine } from "react-icons/ri";
+// import { IoLogoWhatsapp } from "react-icons/io";
+// import { AiOutlineGithub } from "react-icons/ai";
+// import { BrowserRouter as Router, Link } from 'react-router-dom';
+
+
+import facebook from "../Images/facebook.png";
+import instagram from "../Images/instagram.png";
+import whatsapp from "../Images/whatsapp.png";
+import github from "../Images/github.png";
 
 
 
@@ -47,6 +52,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '20px',
         textAlign: 'center',
         fontWeight: 600,
+        marginTop:'40px',
         [theme.breakpoints.down('md')]: {
             marginTop: '40px',
             fontSize: '13px',
@@ -56,7 +62,8 @@ const useStyles = makeStyles((theme) => ({
     },
     heading1: {
         fontSize: '20px',
-        textAlign:'center',
+        textAlign: 'center',
+        marginTop:'40px',
         [theme.breakpoints.down('md')]: {
             fontSize: '15px',
         },
@@ -141,27 +148,30 @@ function Body() {
                                     />
                                 </div>
                                 <div className="avatar_contact">
-                                    <div className="facebook" >
+
                                         <a href="https://www.facebook.com" target="_blank">
-                                        {/* onClick={()=> window.location.href='https://www.instagram.com/' */}
-                                            <FaFacebook color='#3b5998'  size="30px" />
+                                            {/* onClick={()=> window.location.href='https://www.instagram.com/' */}
+                                            {/* <FaFacebook color='#3b5998'  size="30px" /> */}
+                                            <img src={facebook} />
                                         </a>
-                                    </div>
-                                    <div className="insta">
+
                                         <a href="https://www.instagram.com" target="_blank">
-                                            <RiInstagramLine color='#8a3ab9	' size="30px" />
+                                            {/* <RiInstagramLine color='#8a3ab9	' size="30px" /> */}
+                                            <img src={instagram} />
+
                                         </a>
-                                    </div>
-                                    <div className="whatsapp">
+
                                         <a href="https://www.whatsapp.com" target="_blank">
-                                            <IoLogoWhatsapp color='#25D366' size="30px" />
+                                            <img src={whatsapp} />
+                                            {/* <IoLogoWhatsapp color='#25D366' size="30px" /> */}
                                         </a>
-                                    </div>
-                                    <div className="git">
+                                    
                                         <a href="https://www.github.com/NazimFirdousAli" target="_blank">
-                                            <AiOutlineGithub color='black' size="30px" />
+                                            <img src={github} />
+
+                                            {/* <AiOutlineGithub color='black' size="30px" /> */}
                                         </a>
-                                    </div>
+                                    
 
 
                                 </div>

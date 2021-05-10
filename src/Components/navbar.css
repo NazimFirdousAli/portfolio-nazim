@@ -1,5 +1,58 @@
-a{
+/* a{
     text-decoration: none;
     color:inherit;
 
+} */
+
+.root {
+    flex-grow: 1;
+    position: 'fixed';
+    /* width: '100%'; */
+    position: absolute;
+}
+
+
+.menuButton {
+    /* margin-right: theme.spacing(2), */
+    /* [theme.breakpoints.down('xs')]: {
+        width: '5px'
+    } */
+
+}
+.title {
+    flex-grow: 1;
+    margin-left: 60px;
+    font-size: 32px;
+    letter-spacing: 3px;
+    font-weight: 800;
+    /* [theme.breakpoints.down('sm')]: {
+        marginLeft: "0px",
+    },
+    [theme.breakpoints.down('xs')]: {
+        fontSize: '20px'
+    } */
+
+
+}
+.urls {
+    white-space: pre-wrap;
+    margin-right: 100px;
+    text-transform: uppercase;
+
+}
+.list {
+    width: 250,
+}
+.fullList {
+    width: auto,
+}
+.appBarTransparent {
+    background-color: transparent;
+    transition: color 500ms ease-out, background-color 500ms ease-out;
+
+}
+.appBarSolid {
+    background-color: #f8f8f8;
+    color: Black;
+    transition: color 500ms ease-out, background-color 500ms ease-out;
 }

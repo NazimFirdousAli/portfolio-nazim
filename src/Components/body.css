@@ -1,17 +1,17 @@
 @media screen and (max-width: 320px) {
     .avatar_contact {
-        margin-top: 50px;
+        margin-top: 40px;
 opacity: 1;
     }
   }
-.avatar_contact div{
-    padding-left: 20px;
-    margin-top: 3%;
-    display : inline-block;
-    position: relative;
-}
-/* .facebook:hover >  {
-    display: none;
+/* .facebook:hover {
+    fill:"green"
 } */
+
+.avatar_contact img{
+    width: 4%;
+    margin-top: 50px;
+    padding-right: 20px;
+}
 
 

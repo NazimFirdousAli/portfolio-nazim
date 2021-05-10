@@ -111,7 +111,7 @@ function Navbar() {
                         <Hidden smDown>
                             <a href="#" style={{ color: '#00b0dc' }}>Home</a> {"       "}
                             <a href="#">About</a> {"      "}
-                            <a href="#">Services</a>{"        "}
+                            <a href="#">Education</a>{"        "}
                             <a href="#">Projects</a>{"        "}
                             <a href="#">Contact</a>{"        "}
                         </Hidden>
